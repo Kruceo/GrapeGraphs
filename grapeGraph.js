@@ -73,6 +73,3 @@ function getMinor(infoToSort) {
     }
     return max
 }
-function setGraphLineColor(color) {
-    graphColor = color;
-}

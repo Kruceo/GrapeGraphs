@@ -14,7 +14,7 @@
         }
         body
         {
-            background-image: url('https://img.freepik.com/fotos-gratis/figura-triangular-geometrica-legal-em-uma-luz-de-laser-neon-otima-para-fundos-e-papeis-de-parede_181624-9331.jpg?w=2000');
+            background-image: url('https://avatars.githubusercontent.com/u/91754457?v=4');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -25,8 +25,11 @@
             
             width: 32vw;
             height: 50vh;
-            backdrop-filter: blur(50px);
+            backdrop-filter: blur(25px);
             border: 1px rgba(255, 255, 255, 0.116) solid;
+            
+            
+        
         }
 
         main
@@ -78,6 +81,7 @@
             <section>
                 <div class="graph">
                     <canvas id="grafico6"></canvas>
+                    <canvas id="grafico7"></canvas>
                 </div>
             </section>
         </header>
@@ -115,6 +119,11 @@
         fillColor = 'rgb(222,20,142,1)'
         zeroColor = 'red'
         makeGraph('grafico6', [0, 50, 75, 87, 93, 96])
+        graphColor = 'red'
+        markColor = 'transparent'
+        fillColor = 'rgb(222,20,142,0.5)'
+        zeroColor = 'red'
+        makeGraph('grafico7', [-5,0, 1,2, 3, 4, 5])
     </script>
 </body>
 
