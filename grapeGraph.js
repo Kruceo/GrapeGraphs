@@ -1,15 +1,33 @@
 var info = [1, 2, 3, 5, 8, 13]
-var quadro = document.getElementById('grafico');
-var ctx = quadro.getContext("2d")
+var canvas;
+var ctx;
 var graphColor = 'rgb(125,0,255)'
 var fillColor = 'rgb(125,0,255,0.5)'
 var markColor = 'rgb(0,0,0,0.1)'
 var zeroColor = 'rgb(50,255,50)'
-function makeGraph(canvasId,dataArray) {
-    quadro = document.getElementById(canvasId);
-    ctx = quadro.getContext("2d")
-    var height = quadro.offsetHeight
-    var width = quadro.offsetWidth
+
+function makeGraph(canvasId, dataArray) {
+
+
+
+    canvas = document.getElementById(canvasId);
+    ctx = canvas.getContext("2d")
+
+    if (canvas.getAttribute('GraphColor')) {
+        graphColor = canvas.getAttribute('graphColor')
+    }
+    if (canvas.getAttribute('fillColor')) {
+        fillColor = canvas.getAttribute('fillColor')
+    }
+    if (canvas.getAttribute('markColor')) {
+        markColor = canvas.getAttribute('markColor')
+    }
+    if (canvas.getAttribute('zeroColor')) {
+        zeroColor = canvas.getAttribute('zeroColor')
+    }
+    console.log(canvas.style);
+    var height = canvas.offsetHeight
+    var width = canvas.offsetWidth
     const bigger = getBigger(dataArray) * 2;
     const minor = getMinor(dataArray) * 2
     var division = 1;
@@ -17,10 +35,10 @@ function makeGraph(canvasId,dataArray) {
     if (bigger < Math.abs(minor)) {
         coef = Math.abs(minor)
     }
-    quadro.setAttribute('width', width)
-    quadro.setAttribute('height', height)
+    canvas.setAttribute('width', width)
+    canvas.setAttribute('height', height)
     ctx.clearRect(0, 0, width, height)
-    
+
     if (minor < 0) {
         ctx.beginPath();
         ctx.strokeStyle = zeroColor;
@@ -35,7 +53,7 @@ function makeGraph(canvasId,dataArray) {
     //ctx.moveTo(0, height)
     ctx.fillStyle = fillColor
     var xIn = (width / (dataArray.length - 1))
-    var yIn = height / (coef *1.25) * (3 - division);
+    var yIn = height / (coef * 1.25) * (3 - division);
     for (var y = 0; y < dataArray.length; y++) {
         ctx.moveTo(y * xIn, height);
         ctx.lineTo(y * xIn, 0);
@@ -43,7 +61,7 @@ function makeGraph(canvasId,dataArray) {
     ctx.stroke();
     ctx.beginPath();
     ctx.strokeStyle = graphColor;
-    
+
     ctx.moveTo(0, height / division - dataArray[0] * yIn)
     for (var i = 0; i < dataArray.length; i++) {
 
