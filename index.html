@@ -4,135 +4,170 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>GrapeGraph Examples</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <style>
-        *
-        {
+        @import url('https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+        * {
+            margin: 0 0;
+            font-family: 'karla';
+        }
+
+        body {
+            background-color: beige ;
+        }
+
+
+        main {
+
+            width: 1280px;
             margin: 0 auto;
-        }
-        body
-        {
-            background-color: aliceblue;
-        }
-        canvas {
-            
 
-            border-radius: 22px;
-            
-            width: 32vw;
-            height: 50vh;
-            backdrop-filter: blur(25px);
-            border: 1px rgba(255, 255, 255, 0.116) solid;
-            
-            
-        
+
         }
 
-        main
-        {
+        .title {
+            width: 100%;
             display: flex;
             justify-content: center;
+            padding: 10px;
+        }
+
+        h1 {
+            color: rgb(98, 0, 255);
+            font-size: 50px;
         }
 
         section {
             display: flex;
-            width: fit-content;
+
+            align-items: center;
+            background-color: rgb(98, 0, 255);
+            ;
+            width: 100%;
             padding: 10px;
-        }
+            margin-bottom: 10px;
+            border-radius: 10px;
 
-        .graph {
-            margin: 0 10px;
-            padding: 0;
         }
-
-        #grafico
+        .code
         {
-            --graphColor: rgb(222,100,0)
-
-            graphColor: rgb(222,0,0)
+            width: 90%;
+            margin-left: 10px;
+            border-radius: 10px;            
         }
+        .code>pre {
+            width: 100%;
+            height: 360px;
+            text-align: start;
+            font-size: 25px;
+            font-family: 'Share tech mono';
+            color: rgb(255, 255, 255);
+            overflow: hidden;
+            
+            
+
+        }
+       
+
+        .graphBox
+        {
+            background-color: rgb(32, 32, 32);
+            width: 500px;
+            height: 350px;
+            border: 5px rgb(255, 255, 255) solid;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: background-color 300ms;
+        }
+        .graphBox:hover
+        {
+            background-color: rgb(255, 255, 255);
+            transition: background-color 300ms;
+        }
+        canvas
+        {
+            width: 100%;
+            height: 100%;
+        }
+        
     </style>
 </head>
 
 <body>
     <main>
-        <header class="graphGround">
-            <section>
-                <div class="graph">
-                    <canvas id="grafico"></canvas>
-                </div>
-                <div class="graph">
-                    <canvas id="grafico1"></canvas>
-                </div>
-            </section>
-            <section>
-                <div class="graph">
-                    <canvas id="grafico2"></canvas>
-                </div>
-                <div class="graph">
-                    <canvas id="grafico3"></canvas>
-                </div>
-            </section>
-            <section>
-                <div class="graph">
-                    <canvas id="grafico4"></canvas>
-                </div>
-                <div class="graph">
-                    <canvas id="grafico5"></canvas>
-                </div>
-            </section>
-            <section>
-                <div class="graph">
-                    <canvas id="grafico6"></canvas>
-                    <canvas id="grafico7"
-                     graphColor="black" 
-                     zeroColor="rgb(255,0,0,1)" 
-                     fillColor="rgb(222,222,0,0.5)"></canvas>
-                </div>
-            </section>
-        </header>
+        <div class="title">
+            <h1>&LT;GrapeGraphs by Kruceo/&GT;</h1>
+        </div>
+        <section>
+            <div class="graphBox">
+                <canvas id="default" makeGraph=-10,-15,10,20></canvas>
+            </div>
+            <div class="code">
+                <pre>&lt;canvas id="default" makeGraph="-10,-15,10,20"&lt;/canvas&gt;
+
+&lt;script src="grapeGraph.js">&lt;/script></pre>
+            </div>
+        </section>
+        <section>
+            <div class="graphBox">
+                <canvas id="example1" graphColor="transparent" fillColor="rgb(244,0,0,0.5)" markColor="transparent"
+                    makeGraph=-2,4,20,15,10,-2></canvas>
+            </div>
+            <div class="code">
+                <pre>&lt;canvas id="example1" 
+graphColor="transparent" 
+fillColor="rgb(244,0,0,0.5)"
+markColor="transparent" 
+makeGraph="-2,4,20,15,10,-2"&gt;
+&lt;/canvas&gt;
+
+&lt;script src="grapeGraph.js">&lt;/script></pre>
+            </div>
+        </section>
+        <section>
+            <div class="graphBox">
+                <canvas id="example2" graphColor="rgb(244,0,250,1)" fillColor="rgb(255,100,255,0.5)"
+                    markColor="transparent" zeroColor="red" makeGraph="-38,-37,-35,-30,-20,0,20,30,35,37,38"></canvas>
+
+            </div>
+            <div class="code">
+                <pre>&lt;canvas id="example2" 
+graphColor="rgb(244,222,0,1)" 
+fillColor="rgb(244,222,0,0.5)"
+markColor="transparent" 
+zeroColor="red"
+makeGraph=makeGraph="-38,-37,-35,-30,-20,0,20,30,35,37,38"&gt;
+&lt;/canvas&gt;
+
+&lt;script src="grapeGraph.js">&lt;/script></pre>
+            </div>
+        </section>
+
+        <section>
+            <div class="graphBox">
+                <canvas id="example3" graphColor="rgb(9,222,0,1)" fillColor="transparent" markColor="rgb(255,255,255,0.14)"
+                    zeroColor="transparent" makeGraph="38,37,35,30,20,0,-20,-30,-35,-37,-38"></canvas>
+
+            </div>
+            <div class="code">
+                <pre>&lt;canvas id="example2" 
+graphColor="rgb(9,222,0,1)" 
+fillColor="transparent"
+markColor="rgb(255,255,255,0.14)" 
+zeroColor="transparent"
+makeGraph=makeGraph="38,37,35,30,20,0,-20,-30,-35,-37,-38"&gt;
+&lt;/canvas&gt;
+
+&lt;script src="grapeGraph.js">&lt;/script></pre>
+            </div>
+        </section>
     </main>
-    <script src="grapeGraph.js" crossorigin="anonymous" type="text/javascript"></script>
-    <script>
-        makeGraph('grafico', [1, 2, 3, 5, 8, 13, 17, 19, 20, 20, 19, 17, 13, 8, 5, 3, 2, 1, -1, -3, -5, -8])
-        graphColor = 'rgb(0,255,0,0.25)'
-        fillColor = 'rgb(0,0,0,0)'
-        markColor = 'rgb(255,0,0,0)'
-        zeroColor = 'rgb(0,0,0,0.55)'
-        makeGraph('grafico1', [0, 5, 3, 5, 8, 13, 17, 19, 20])
-        graphColor = 'red'
-        fillColor = 'rgb(255,0,0,0.25)'
-        markColor = 'rgb(255,0,0,0.05)'
-        zeroColor = 'rgb(255,255,0,0.55)'
-        makeGraph('grafico2', [1, 2, 3, 5, 8, 13, 17, 5, 3, 2, 1, -1, -3, -5, -8])
-        graphColor = 'transparent'
-        markColor = 'transparent'
-        fillColor = 'rgb(10,100,255,0.35)'
-        zeroColor = 'rgb(255,0,0,0.4)'
-        makeGraph('grafico3', [27, 30, 5, 15, 8, 2, -8, -2, -12, -10, -20, -17, -30])
-        graphColor = 'purple'
-        markColor = 'transparent'
-        fillColor = 'rgb(150,20,255,0.35)'
-        zeroColor = 'rgb(255,0,0,0.4)'
-        makeGraph('grafico4', [-900, 200, 500, 2000, 5255, 2020, 1250, 500, -1000, -2000, -2200, -4400].reverse())
-        graphColor = 'transparent'
-        markColor = 'transparent'
-        fillColor = 'rgb(50,200,142,1)'
-        zeroColor = 'red'
-        makeGraph('grafico5', [-68, -42, -26, -16, -10, -6, -4, -2, 0, 2, 4, 6, 10, 16, 26, 42, 68].reverse())
-        graphColor = 'transparent'
-        markColor = 'transparent'
-        fillColor = 'rgb(222,20,142,1)'
-        zeroColor = 'red'
-        makeGraph('grafico6', [0, 50, 75, 87, 93, 96])
-        graphColor = 'red'
-        markColor = 'transparent'
-        fillColor = 'rgb(222,20,142,0.5)'
-        zeroColor = 'red'
-        makeGraph('grafico7', [-50,-33,-24, 1,22, 32, 24, 5])
-    </script>
+    <script src="grapeGraph.js"></script>
+    <script>//makeGraph('example2',[0,1,2,3,5,8,13,21,34,0])</script>
 </body>
 
 </html>

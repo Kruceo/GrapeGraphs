@@ -6,10 +6,22 @@ var fillColor = 'rgb(125,0,255,0.5)'
 var markColor = 'rgb(0,0,0,0.1)'
 var zeroColor = 'rgb(50,255,50)'
 
+window.onload = function () {
+    const allCanvas = document.querySelectorAll('canvas')
+    for (let element of allCanvas) {
+        if (element.getAttribute('makeGraph')) {
+            var newData = []
+            for(string of element.getAttribute('makeGraph').split(','))
+            {
+newData.push( Number.parseFloat(string))
+            }
+            makeGraph(element.getAttribute('id'), newData)
+            
+        }
+    }
+}
+
 function makeGraph(canvasId, dataArray) {
-
-
-
     canvas = document.getElementById(canvasId);
     ctx = canvas.getContext("2d")
 
@@ -37,9 +49,12 @@ function makeGraph(canvasId, dataArray) {
     else {
         zeroColor = 'rgb(50,255,50)'
     }
-    console.log(canvas.style);
+    ctx.lineWidth = 1;
+    ctx.lineJoin = 'round'
     var height = canvas.offsetHeight
     var width = canvas.offsetWidth
+
+    
     const bigger = getBigger(dataArray) * 2;
     const minor = getMinor(dataArray) * 2
     var division = 1;
@@ -57,11 +72,10 @@ function makeGraph(canvasId, dataArray) {
         ctx.moveTo(0, height / 2);
         ctx.lineTo(width, height / 2);
         ctx.stroke();
-        division = 2;
+        division = 2; 
     }
+    ctx.beginPath();
     ctx.strokeStyle = markColor;
-    ctx.lineWidth = 2;
-    ctx.lineJoin = 'round'
     //ctx.moveTo(0, height)
     ctx.fillStyle = fillColor
     var xIn = (width / (dataArray.length - 1))
