@@ -5,11 +5,12 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>GrapeGraph Examples</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name='viewport' content='width=device-width, initial-scale=2'>
+
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 
         * {
             margin: 0 0;
@@ -17,7 +18,7 @@
         }
 
         body {
-            background-color: beige ;
+            background-color: beige;
         }
 
 
@@ -37,7 +38,7 @@
         }
 
         h1 {
-            color: rgb(98, 0, 255);
+            color: rgb(174, 0, 255);
             font-size: 50px;
         }
 
@@ -45,7 +46,7 @@
             display: flex;
 
             align-items: center;
-            background-color: rgb(98, 0, 255);
+            background-color: rgb(174, 0, 255);
             ;
             width: 100%;
             padding: 10px;
@@ -53,28 +54,25 @@
             border-radius: 10px;
 
         }
-        .code
-        {
+
+        .code {
             width: 90%;
             margin-left: 10px;
-            border-radius: 10px;            
+            border-radius: 10px;
         }
+
         .code>pre {
             width: 100%;
             height: 360px;
             text-align: start;
             font-size: 25px;
-            font-family: 'Share tech mono';
+            font-family: 'karla';
             color: rgb(255, 255, 255);
             overflow: hidden;
-            
-            
-
         }
-       
 
-        .graphBox
-        {
+
+        .graphBox {
             background-color: rgb(32, 32, 32);
             width: 500px;
             height: 350px;
@@ -83,17 +81,16 @@
             overflow: hidden;
             transition: background-color 300ms;
         }
-        .graphBox:hover
-        {
+
+        .graphBox:hover {
             background-color: rgb(255, 255, 255);
             transition: background-color 300ms;
         }
-        canvas
-        {
+
+        canvas {
             width: 100%;
             height: 100%;
         }
-        
     </style>
 </head>
 
@@ -149,8 +146,9 @@ makeGraph=makeGraph="-38,-37,-35,-30,-20,0,20,30,35,37,38"&gt;
 
         <section>
             <div class="graphBox">
-                <canvas id="example3" graphColor="rgb(9,222,0,1)" fillColor="transparent" markColor="rgb(255,255,255,0.14)"
-                    zeroColor="transparent" makeGraph="38,37,35,30,20,0,-20,-30,-35,-37,-38"></canvas>
+                <canvas id="example3" graphColor="rgb(9,222,0,1)" fillColor="transparent"
+                    markColor="rgb(255,255,255,0.14)" zeroColor="transparent"
+                    makeGraph="38,37,35,30,20,0,-20,-30,-35,-37,-38"></canvas>
 
             </div>
             <div class="code">
