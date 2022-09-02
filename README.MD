@@ -40,7 +40,7 @@
 ```
 ###### <br> ######
 >#### From attributes ####
-``` html 
+``` html
  <canvas id="graph1"
      graphColor="black" 
      fillColor="rgb(222,222,0,0.5)"

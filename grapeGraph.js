@@ -1,4 +1,4 @@
-var info = [1, 2, 3, 5, 8, 13]
+const info = [1, 2, 3, 5, 8, 13]
 var canvas;
 var ctx;
 var graphColor = 'rgb(125,0,255)'
@@ -16,14 +16,26 @@ function makeGraph(canvasId, dataArray) {
     if (canvas.getAttribute('GraphColor')) {
         graphColor = canvas.getAttribute('graphColor')
     }
+    else {
+        graphColor = 'rgb(125,0,255)'
+    }
     if (canvas.getAttribute('fillColor')) {
         fillColor = canvas.getAttribute('fillColor')
+    }
+    else {
+        fillColor = 'rgb(125,0,255,0.5)'
     }
     if (canvas.getAttribute('markColor')) {
         markColor = canvas.getAttribute('markColor')
     }
+    else {
+        markColor = 'rgb(0,0,0,0.1)'
+    }
     if (canvas.getAttribute('zeroColor')) {
         zeroColor = canvas.getAttribute('zeroColor')
+    }
+    else {
+        zeroColor = 'rgb(50,255,50)'
     }
     console.log(canvas.style);
     var height = canvas.offsetHeight
