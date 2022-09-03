@@ -57,7 +57,21 @@
             padding: 10px 5px;
             margin-bottom: 10px;
             border-radius: 10px;
-
+            opacity: 0;
+            animation: entry 1s;
+            animation-fill-mode: forwards;
+        }
+        section:nth-child(3)
+        {
+            animation-delay: 0.3s;
+        }
+        section:nth-child(4)
+        {
+            animation-delay: 0.6s;
+        }
+        section:nth-child(5)
+        {
+            animation-delay: 0.9s;
         }
 
         .code {
@@ -70,7 +84,7 @@
 
         }
 
-        
+
 
         .code>pre {
 
@@ -103,32 +117,46 @@
             width: 100%;
             height: 100%;
         }
+
         @media (min-width: 1500px) {
-            section
-            {
+            section {
                 height: 500px;
             }
-            .code>pre
-            {
-                font-size: 35px ;
+
+            .code>pre {
+                font-size: 35px;
             }
         }
+
         @media (max-width: 900px) {
             .code {
                 visibility: collapse;
                 width: 0;
                 margin: 0;
             }
-            pre
-            {
+
+            pre {
                 visibility: collapse;
             }
-            .graphBox
-            {
+
+            .graphBox {
                 width: 100%;
             }
+
+           
         }
-       
+        @keyframes entry {
+                0% {
+                    transform: translateX(-500px);
+                    opacity: 0;
+                }
+
+                100% {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+    
+            }
     </style>
 </head>
 
@@ -165,8 +193,8 @@ makeGraph="-2,4,20,15,10,-2"&gt;
         </section>
         <section>
             <div class="graphBox">
-                <canvas id="example2" graphColor="transparent" fillColor="rgb(120,100,255,0.5)"
-                    markColor="transparent" zeroColor="red" makeGraph="-38,-37,-35,-30,-20,0,20,30,35,37,38"></canvas>
+                <canvas id="example2" graphColor="transparent" fillColor="rgb(120,100,255,0.5)" markColor="transparent"
+                    zeroColor="red" makeGraph="-38,-37,-35,-30,-20,0,20,30,35,37,38"></canvas>
 
             </div>
             <div class="code">
@@ -184,8 +212,8 @@ makeGraph=makeGraph="-38,-37,-35,-30,-20,0,20,30,35,37,38"&gt;
 
         <section>
             <div class="graphBox">
-                <canvas id="example3" graphColor="rgb(9,222,0,1)" fillColor="transparent"
-                    markColor="transparent" zeroColor="transparent"
+                <canvas id="example3" graphColor="rgb(9,222,0,1)" fillColor="transparent" markColor="transparent"
+                    zeroColor="transparent"
                     makeGraph="38,37,35,30,20,0,-20,-30,-35,-37,-38,38,37,35,30,20,0,-20,-30,-35,-37,-38,38,37,35,30,20,0,-20,-30,-35,-37,-38,38,37,35,30,20,0,-20,-30,-35,-37,-38"></canvas>
 
             </div>
