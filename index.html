@@ -7,6 +7,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>GrapeGraph Examples</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://grape.kruceo.com/grapeGraph.js"></script>
 
 
     <style>
@@ -46,6 +47,13 @@
             font-size: 50px;
         }
 
+        .subtitle>h1 {
+            color: rgb(32, 32, 32);
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        
 
         section {
 
@@ -61,17 +69,24 @@
             animation: entry 1s;
             animation-fill-mode: forwards;
         }
-        section:nth-child(3)
+        section:nth-child(3) 
         {
+            height: 200px;
+        }
+
+        section:nth-child(5) {
             animation-delay: 0.3s;
         }
-        section:nth-child(4)
-        {
+
+        section:nth-child(6) {
             animation-delay: 0.6s;
         }
-        section:nth-child(5)
-        {
+
+        section:nth-child(7) {
             animation-delay: 0.9s;
+        }
+        section:nth-child(8) {
+            animation-delay: 1.2s;
         }
 
         .code {
@@ -80,17 +95,14 @@
 
             margin-left: 10px;
             border-radius: 10px;
-            overflow: hidden;
+            overflow: auto;
 
         }
-
-
-
         .code>pre {
 
             height: fit-content;
             text-align: start;
-            font-size: 25px;
+            font-size: 20px;
             font-family: 'karla';
             color: rgb(255, 255, 255);
 
@@ -124,7 +136,7 @@
             }
 
             .code>pre {
-                font-size: 35px;
+                font-size: 25px;
             }
         }
 
@@ -143,20 +155,21 @@
                 width: 100%;
             }
 
-           
-        }
-        @keyframes entry {
-                0% {
-                    transform: translateX(-500px);
-                    opacity: 0;
-                }
 
-                100% {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-    
+        }
+
+        @keyframes entry {
+            0% {
+                transform: translateX(-500px);
+                opacity: 0;
             }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+        }
     </style>
 </head>
 
@@ -164,6 +177,28 @@
     <main>
         <div class="title">
             <h1>&LT;GrapeGraphs by Kruceo/&GT;</h1>
+        </div>
+
+
+        <div class="subtitle">
+            <h1>&LT;To start!&GT;</h1>
+        </div>
+        <section>
+            <div class="code toStart">
+                <pre>
+ &lt;head>
+    &lt;meta lang="en-us">
+    &lt;meta charset='utf-8'>
+    &lt;meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    &lt;title>GrapeGraph Examples&lt;/title>
+    &lt;meta name='viewport' content='width=device-width, initial-scale=1'>
+    &lt;<strong>script src="https://grape.kruceo.com/grapeGraph.js">&lt;/script></strong>
+&lt;/head>
+            </div>
+        </section>
+
+        <div class="subtitle">
+            <h1>&LT;Generating with html attributes&GT;</h1>
         </div>
         <section>
             <div class="graphBox">
@@ -229,9 +264,55 @@ makeGraph=makeGraph="38,37,35,30,20,0,-20,-30,-35,-37,-38"&gt;
 &lt;script src="https://grape.kruceo.com/grapeGraph.js">&lt;/script></pre>
             </div>
         </section>
+        <div class="subtitle">
+            <h1>&LT;Generating with javascript&GT;</h1>
+        </div>
+        <section>
+            <div class="graphBox">
+                <canvas id="actualize" graphColor="transparent" markColor="transparent" zeroColor="red"></canvas>
+
+            </div>
+            <div class="code">
+                <pre>var array = [0]
+var interval = setInterval(function()
+{
+    const random = array[array.length-1] + (90 - Math.random()*180)
+    array.push(random)
+    if(array[array.length-1] < 0)
+    {
+    fillColor = 'rgb(255,0,0,0.5)'
+    }
+    else
+    {
+    fillColor = 'rgb(0,255,0,0.5)'
+    }
+    makeGraph('actualize',array)
+    if(array.length > 100)
+    {
+    array = [0]
+    }
+},50)
+            </div>
+        </section>
     </main>
-    <script src="grapeGraph.js"></script>
-    <script>//makeGraph('example2',[0,1,2,3,5,8,13,21,34,0])</script>
+    
+    <script>
+        var array = [0]
+        var interval = setInterval(function () {
+            const random = array[array.length - 1] + (90 - Math.random() * 180)
+            array.push(random)
+            if (array[array.length - 1] < 0) {
+                fillColor = 'rgb(255,0,0,0.5)'
+            }
+            else {
+                fillColor = 'rgb(0,255,0,0.5)'
+            }
+            makeGraph('actualize', array)
+            if (array.length > 100) {
+                array = [0]
+            }
+        }, 50)
+    </script>
 </body>
 
 </html>
