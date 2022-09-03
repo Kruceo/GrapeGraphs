@@ -2,10 +2,11 @@
 <html>
 
 <head>
+    <meta lang="en-us">
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>GrapeGraph Examples</title>
-    <meta name='viewport' content='width=device-width, initial-scale=2'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
 
 
     <style>
@@ -24,7 +25,10 @@
 
         main {
 
-            width: 1280px;
+
+            width: 80%;
+
+
             margin: 0 auto;
 
 
@@ -42,40 +46,48 @@
             font-size: 50px;
         }
 
+
         section {
-            display: flex;
 
             align-items: center;
             background-color: rgb(174, 0, 255);
-            ;
+            display: flex;
             width: 100%;
-            padding: 10px;
+            height: 300px;
+            padding: 10px 5px;
             margin-bottom: 10px;
             border-radius: 10px;
 
         }
 
         .code {
-            width: 90%;
+            width: 65%;
+            height: 100%;
+
             margin-left: 10px;
             border-radius: 10px;
+            overflow: hidden;
+
         }
 
+        
+
         .code>pre {
-            width: 100%;
-            height: 360px;
+
+            height: fit-content;
             text-align: start;
             font-size: 25px;
             font-family: 'karla';
             color: rgb(255, 255, 255);
-            overflow: hidden;
+
         }
+
 
 
         .graphBox {
             background-color: rgb(32, 32, 32);
-            width: 500px;
-            height: 350px;
+            width: 35%;
+            height: 100%;
             border: 5px rgb(255, 255, 255) solid;
             border-radius: 10px;
             overflow: hidden;
@@ -91,6 +103,32 @@
             width: 100%;
             height: 100%;
         }
+        @media (min-width: 1500px) {
+            section
+            {
+                height: 500px;
+            }
+            .code>pre
+            {
+                font-size: 35px ;
+            }
+        }
+        @media (max-width: 900px) {
+            .code {
+                visibility: collapse;
+                width: 0;
+                margin: 0;
+            }
+            pre
+            {
+                visibility: collapse;
+            }
+            .graphBox
+            {
+                width: 100%;
+            }
+        }
+       
     </style>
 </head>
 
@@ -111,8 +149,8 @@
         </section>
         <section>
             <div class="graphBox">
-                <canvas id="example1" graphColor="transparent" fillColor="rgb(244,0,0,0.5)" markColor="transparent"
-                    makeGraph=-2,4,20,15,10,-2></canvas>
+                <canvas id="example1" graphColor="transparent" fillColor="rgb(255,50,100,0.5)" markColor="transparent"
+                    makeGraph=-2,1,2,5,4,1,-1,-5,-9,-10,-9,4,5,4,6,10,12,13,13,12,10,6,-10,-11,-8,0,1></canvas>
             </div>
             <div class="code">
                 <pre>&lt;canvas id="example1" 
@@ -127,7 +165,7 @@ makeGraph="-2,4,20,15,10,-2"&gt;
         </section>
         <section>
             <div class="graphBox">
-                <canvas id="example2" graphColor="rgb(244,0,250,1)" fillColor="rgb(255,100,255,0.5)"
+                <canvas id="example2" graphColor="transparent" fillColor="rgb(120,100,255,0.5)"
                     markColor="transparent" zeroColor="red" makeGraph="-38,-37,-35,-30,-20,0,20,30,35,37,38"></canvas>
 
             </div>
@@ -147,8 +185,8 @@ makeGraph=makeGraph="-38,-37,-35,-30,-20,0,20,30,35,37,38"&gt;
         <section>
             <div class="graphBox">
                 <canvas id="example3" graphColor="rgb(9,222,0,1)" fillColor="transparent"
-                    markColor="rgb(255,255,255,0.14)" zeroColor="transparent"
-                    makeGraph="38,37,35,30,20,0,-20,-30,-35,-37,-38"></canvas>
+                    markColor="transparent" zeroColor="transparent"
+                    makeGraph="38,37,35,30,20,0,-20,-30,-35,-37,-38,38,37,35,30,20,0,-20,-30,-35,-37,-38,38,37,35,30,20,0,-20,-30,-35,-37,-38,38,37,35,30,20,0,-20,-30,-35,-37,-38"></canvas>
 
             </div>
             <div class="code">

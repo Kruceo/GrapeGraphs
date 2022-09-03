@@ -11,12 +11,11 @@ window.onload = function () {
     for (let element of allCanvas) {
         if (element.getAttribute('makeGraph')) {
             var newData = []
-            for(string of element.getAttribute('makeGraph').split(','))
-            {
-newData.push( Number.parseFloat(string))
+            for (string of element.getAttribute('makeGraph').split(',')) {
+                newData.push(Number.parseFloat(string))
             }
             makeGraph(element.getAttribute('id'), newData)
-            
+
         }
     }
 }
@@ -54,7 +53,7 @@ function makeGraph(canvasId, dataArray) {
     var height = canvas.offsetHeight
     var width = canvas.offsetWidth
 
-    
+
     const bigger = getBigger(dataArray) * 2;
     const minor = getMinor(dataArray) * 2
     var division = 1;
@@ -72,7 +71,7 @@ function makeGraph(canvasId, dataArray) {
         ctx.moveTo(0, height / 2);
         ctx.lineTo(width, height / 2);
         ctx.stroke();
-        division = 2; 
+        division = 2;
     }
     ctx.beginPath();
     ctx.strokeStyle = markColor;
