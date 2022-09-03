@@ -27,27 +27,19 @@ function makeGraph(canvasId, dataArray) {
     if (canvas.getAttribute('GraphColor')) {
         graphColor = canvas.getAttribute('graphColor')
     }
-    else {
-        graphColor = 'rgb(125,0,255)'
-    }
+   
     if (canvas.getAttribute('fillColor')) {
         fillColor = canvas.getAttribute('fillColor')
     }
-    else {
-        fillColor = 'rgb(125,0,255,0.5)'
-    }
+    
     if (canvas.getAttribute('markColor')) {
         markColor = canvas.getAttribute('markColor')
     }
-    else {
-        markColor = 'rgb(0,0,0,0.1)'
-    }
+    
     if (canvas.getAttribute('zeroColor')) {
         zeroColor = canvas.getAttribute('zeroColor')
     }
-    else {
-        zeroColor = 'rgb(50,255,50)'
-    }
+    
     ctx.lineWidth = 1;
     ctx.lineJoin = 'round'
     var height = canvas.offsetHeight
